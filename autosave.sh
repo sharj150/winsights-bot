@@ -23,8 +23,9 @@ start_autosave() {
     
     # Start the Python watcher in the background
     nohup python3 "$SCRIPT_DIR/autosave_watcher.py" >> "$LOG_FILE" 2>&1 &
-    echo $! > "$PID_FILE"
-    echo "Auto-save started (PID: $(cat $PID_FILE))"
+    NEW_PID=$!
+    echo "$NEW_PID" > "$PID_FILE"
+    echo "Auto-save started (PID: $NEW_PID)"
     echo "Logs: $LOG_FILE"
 }
 

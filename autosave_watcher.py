@@ -119,6 +119,8 @@ def get_file_modification_times():
     return times
 
 def main():
+    global pending_changes, last_change_time
+    
     print(f"Auto-save watcher started for {REPO_DIR}")
     print(f"Watching for changes (debounce: {DEBOUNCE_SECONDS}s)...")
     

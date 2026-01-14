@@ -2,17 +2,53 @@
 
 A bot project for Winsights.
 
-## Auto-Save Setup
+## 🚀 Repository Setup
 
-This repository is configured to automatically commit and push changes. The auto-save feature runs in the background and commits changes every time files are modified.
+This repository is connected to GitHub and configured with **automatic commit and push** functionality.
 
-To start auto-save:
+**GitHub Repository:** https://github.com/sharj150/winsights-bot
+
+## 💾 Auto-Save Feature
+
+The auto-save feature automatically commits and pushes your changes to GitHub whenever you modify files. No need to manually commit at the end of each coding session!
+
+### How It Works
+
+- Watches for file changes in the repository
+- Waits 5 seconds after the last change (debounce) before committing
+- Automatically stages, commits, and pushes changes to GitHub
+- Runs in the background
+
+### Commands
+
+**Start auto-save:**
 ```bash
 ./autosave.sh start
 ```
 
-To stop auto-save:
+**Stop auto-save:**
 ```bash
 ./autosave.sh stop
+```
+
+**Check status:**
+```bash
+./autosave.sh status
+```
+
+**Restart auto-save:**
+```bash
+./autosave.sh restart
+```
+
+### Auto-Save Status
+
+The auto-save watcher is currently **running** and will automatically save your changes to GitHub.
+
+### Logs
+
+View auto-save activity:
+```bash
+tail -f .autosave.log
 ```
 
